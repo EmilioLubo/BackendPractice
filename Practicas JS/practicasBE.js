@@ -1,37 +1,32 @@
-class Contador{
-
-    constructor(nombre){
+"use strict";
+exports.__esModule = true;
+var MrContador = /** @class */ (function () {
+    function MrContador(nombre) {
         this.nombre = nombre;
         this.cuenta = 0;
     }
-
-    static cuentaTotal = 0;
-
-    obtenerResponsable(){
+    MrContador.prototype.obtenerResponsable = function () {
         return this.nombre;
-    }
-
-    obtenerCuentaIndividual(){
+    };
+    MrContador.prototype.obtenerCuentaIndividual = function () {
         return this.cuenta;
-    }
-
-    obtenerCuentaTotal(){
-        return Contador.cuentaTotal;
-    }
-
-    contar(){
+    };
+    MrContador.prototype.obtenerCuentaTotal = function () {
+        return MrContador.cuentaTotal;
+    };
+    MrContador.prototype.contar = function () {
         this.cuenta += 1;
-        Contador.cuentaTotal += 1;
-    }
-}
-const juan = new Contador("juan");
-const pedro = new Contador("pedro");
-
+        MrContador.cuentaTotal += 1;
+    };
+    MrContador.cuentaTotal = 0;
+    return MrContador;
+}());
+var juan = new MrContador("juan");
+var pedro = new MrContador("pedro");
 juan.contar();
 juan.contar();
 juan.contar();
 pedro.contar();
-
 console.log(juan);
 console.log(pedro);
 console.log(juan.obtenerCuentaTotal());
